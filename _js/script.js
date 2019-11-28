@@ -7,20 +7,29 @@ function renderTodos(){
   listElement.innerHTML = '';
   for(todo of todos){
     var todoElement = document.createElement('li');
+    todoElement.setAttribute('class', 'list');
     var todoText = document.createTextNode(todo);
     var linkElement = document.createElement('a');
-    linkElement.setAttribute('href', '#');
+    var concluir = document.createElement('a')
     var posicao = todos.indexOf(todo);
+    var linkText = document.createElement('i');
+    var linkConcluir = document.createElement('i');
+    linkElement.setAttribute('href', '#');
+    concluir.setAttribute('href', '#');
     linkElement.setAttribute('onclick', 'deletar('+ posicao +')');
-    var linkText = document.createTextNode('✅');
+    //concluir.setAttribute('onclick', 'completa()');
+    linkText.setAttribute('class', 'fas fa-trash');
+    //linkConcluir.setAttribute('class', 'fas fa-check-square');
     linkElement.appendChild(linkText);
+    //concluir.appendChild(linkConcluir);
     todoElement.appendChild(todoText);
+    todoElement.appendChild(concluir);
     todoElement.appendChild(linkElement);
+    
     listElement.appendChild(todoElement);
   }
 }
 renderTodos();
-
 function adicionarTodo(){
   if(inputElement.value === ''){
     alert('Digite alguma tarefa!');
@@ -33,7 +42,14 @@ function adicionarTodo(){
     salvarDados()
   }
 }
+
 buttonElement.onclick = adicionarTodo;
+/**
+ * function completa(){
+  teste = document.querySelector('li');
+  teste.setAttribute('class', 'riscado');
+}
+ */
 
 function deletar(posicao){
   //splice remove algo da lista passando a posição e o item do arrey 
@@ -41,6 +57,8 @@ function deletar(posicao){
   renderTodos();
   salvarDados();
 }
+
+
 function salvarDados(){
   localStorage.setItem('lista_todos', JSON.stringify(todos));
 }
