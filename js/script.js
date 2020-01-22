@@ -48,6 +48,7 @@ buttonElement.onclick = adicionarTodo;
  * function completa(){
   teste = document.querySelector('li');
   teste.setAttribute('class', 'riscado');
+  alterando
 }
  */
 
