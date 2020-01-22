@@ -44,13 +44,6 @@ function adicionarTodo(){
 }
 
 buttonElement.onclick = adicionarTodo;
-/**
- * function completa(){
-  teste = document.querySelector('li');
-  teste.setAttribute('class', 'riscado');
-  alterando
-}
- */
 
 function deletar(posicao){
   //splice remove algo da lista passando a posição e o item do arrey 
