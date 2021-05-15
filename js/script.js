@@ -17,11 +17,8 @@ function renderTodos(){
     linkElement.setAttribute('href', '#');
     concluir.setAttribute('href', '#');
     linkElement.setAttribute('onclick', 'deletar('+ posicao +')');
-    //concluir.setAttribute('onclick', 'completa()');
     linkText.setAttribute('class', 'fas fa-trash');
-    //linkConcluir.setAttribute('class', 'fas fa-check-square');
     linkElement.appendChild(linkText);
-    //concluir.appendChild(linkConcluir);
     todoElement.appendChild(todoText);
     todoElement.appendChild(concluir);
     todoElement.appendChild(linkElement);
@@ -46,7 +43,6 @@ function adicionarTodo(){
 buttonElement.onclick = adicionarTodo;
 
 function deletar(posicao){
-  //splice remove algo da lista passando a posição e o item do arrey 
   todos.splice(posicao, 1);
   renderTodos();
   salvarDados();

@@ -5,7 +5,7 @@
   font-family: 'Indie Flower', cursive;
 }
 body{
-  background: #6C7A89;
+  background: #caced1;
 }
 #app{
   width: 600px;
@@ -35,7 +35,7 @@ input{
   font-size: 18px;
 }
 button{
-  background-color: #4CAF50;
+  background-color: #439445;
   color: white;
   padding: 12px 20px;
   border: none;
@@ -53,7 +53,7 @@ li{
   font-size: 26px;
   border: none;
   border-radius: 4px;
-  background-color: #4CAF50;
+  background-color: #439445;
   margin-bottom: 5px;
 }
 .riscado{
